@@ -2,6 +2,7 @@ const express = require("express");
 const logger = require("./config/logger");
 
 const healthRoutes = require("./routes/health.routes");
+const cardsRoutes  = require("./routes/cards.routes");
 
 const app = express();
 
@@ -18,6 +19,7 @@ app.use((req, res, next) => {
 });
 
 app.use("/health", healthRoutes);
+app.use("/cards", cardsRoutes);
 
 
 app.use((req, res) => {
